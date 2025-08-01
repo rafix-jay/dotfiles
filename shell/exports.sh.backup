@@ -55,8 +55,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
-
-# ------------------------------------------------------------------------------
-# 1Password SSH Agent
-# ------------------------------------------------------------------------------
-export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
