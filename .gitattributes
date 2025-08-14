@@ -1,0 +1,30 @@
+# Normalize line endings for text files
+* text=auto eol=lf
+
+# Treat these as text
+*.md text
+*.sh text eol=lf
+*.zsh text eol=lf
+*.bash text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+
+# Mark generated Zim files to avoid noisy diffs
+shell/zsh/.zim/* linguist-generated
+shell/zsh/.zim/** linguist-generated
+
+# Improve diffs for certain file types
+*.md diff=markdown
+*.py diff=python
+*.sh diff=sh
+*.zsh diff=sh
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
