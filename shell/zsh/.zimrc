@@ -1,7 +1,10 @@
 # If you modify this execute `zimfw uninstall & zimfw install`
 zmodule zimfw/environment
+zmodule zimfw/git
 zmodule zimfw/git-info
 zmodule zimfw/input
+zmodule zimfw/utility
 zmodule zimfw/completion
+zmodule zsh-users/zsh-completions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
