@@ -5,6 +5,10 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+##### Events #####
+# Add custom events for aerospace workspace integration
+sketchybar --add event aerospace_workspace_change
+
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:

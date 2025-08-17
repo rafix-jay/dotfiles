@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # AeroSpace workspace integration
-# Get current AeroSpace workspace with fallback
-CURRENT_WORKSPACE=$(aerospace list-workspaces --focused 2>/dev/null || echo "1")
+# Get current AeroSpace workspace - use environment variable if available (from aerospace trigger)
+CURRENT_WORKSPACE="${FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused 2>/dev/null || echo "1")}"
 
 # Extract workspace ID from the space item name (e.g., "space.A" -> "A")
 WORKSPACE_ID=${NAME#space.}
