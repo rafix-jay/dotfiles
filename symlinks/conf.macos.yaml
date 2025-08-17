@@ -10,6 +10,9 @@
 
 - link:
     ~/.dotly: os/mac/.dotly
+    ~/.aerospace.toml: os/mac/aerospace.toml
+    ~/.config/sketchybar: os/mac/sketchybar
+    ~/.tmux.conf: shell/tmux/tmux.conf
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind
