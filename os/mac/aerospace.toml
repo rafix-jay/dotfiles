@@ -105,6 +105,10 @@ run = 'move-node-to-workspace M'  # M for Messaging
 if.app-id = 'ru.keepcoder.Telegram'
 run = 'move-node-to-workspace M'  # M for Messaging
 
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace M'  # M for Messaging
+
 # Finder and file management
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -123,6 +127,14 @@ run = 'move-node-to-workspace N'  # N for Notes
 [[on-window-detected]]
 if.app-id = 'com.adobe.Photoshop'
 run = 'move-node-to-workspace P'  # P for Photo editing
+
+[[on-window-detected]]
+if.app-id = 'com.adobe.Lightroom'
+run = 'move-node-to-workspace P'  # P for Photo editing (Lightroom Classic)
+
+[[on-window-detected]]
+if.app-id = 'com.hasselblad.phocus'
+run = 'move-node-to-workspace P'  # P for Photo editing (Hasselblad Phocus)
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
@@ -202,10 +214,15 @@ run = 'move-node-to-workspace B'  # B for Browser
     # Messaging apps
     cmd-alt-w = 'exec-and-forget open -a WhatsApp'                # WhatsApp
     cmd-alt-m = 'exec-and-forget open -a Messages'                # Messages
+    cmd-alt-d = 'exec-and-forget open -a Discord'                 # Discord
     cmd-shift-alt-t = 'exec-and-forget open -a Telegram'          # Telegram (alternative shortcut)
     
     # AI Tools (web-based fallback)
     cmd-alt-g = 'exec-and-forget open "https://chat.openai.com"'  # ChatGPT (web)
+    
+    # Creative applications
+    cmd-shift-alt-l = 'exec-and-forget open -a "Adobe Lightroom Classic"'  # Lightroom Classic
+    cmd-shift-alt-s = 'exec-and-forget open -a "Adobe Photoshop 2024"'     # Photoshop
     
     # Sketchybar integration
     alt-shift-0 = 'exec-and-forget /Users/rafix/.config/sketchybar/plugins/update_workspaces.sh'  # Refresh workspace indicators

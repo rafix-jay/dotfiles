@@ -10,7 +10,7 @@ CURRENT=$(aerospace list-workspaces --focused 2>/dev/null || echo "1")
 echo "Current workspace: $CURRENT"
 
 # Update all configured workspaces
-for ws in T B C I A M 1 2 3; do
+for ws in T B C I A M P 1 2 3; do
     if [ "$ws" = "$CURRENT" ]; then
         # Highlight active workspace
         sketchybar --set "space.$ws" \

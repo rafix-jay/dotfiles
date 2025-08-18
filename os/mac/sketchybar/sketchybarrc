@@ -56,8 +56,8 @@ sketchybar --default "${default[@]}"
 # to indicate active and available mission control spaces.
 
 # AeroSpace workspace indicators - Most Used Workspaces Only
-SPACE_ICONS=("T" "B" "C" "I" "A" "M" "1" "2" "3")
-SPACE_NAMES=("Terminal" "Browser" "Code" "IntelliJ" "AI-Tools" "Messaging" "General-1" "General-2" "General-3")
+SPACE_ICONS=("T" "B" "C" "I" "A" "M" "P" "1" "2" "3")
+SPACE_NAMES=("Terminal" "Browser" "Code" "IntelliJ" "AI-Tools" "Messaging" "Photo" "General-1" "General-2" "General-3")
 for i in "${!SPACE_ICONS[@]}"
 do
   sid="${SPACE_ICONS[i]}"

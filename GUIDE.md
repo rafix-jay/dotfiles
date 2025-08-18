@@ -274,10 +274,10 @@ Optimized for **Warp terminal** integration:
 | **C** | Code | VS Code |
 | **I** | IntelliJ | IntelliJ IDEA |
 | **A** | AI Tools | Claude, Perplexity (app) |
-| **M** | Messaging | WhatsApp, Messages, Telegram |
+| **M** | Messaging | WhatsApp, Messages, Discord, Telegram |
 | **F** | Files | Finder |
 | **N** | Notes | Notes, TextEdit |
-| **P** | Photo/Preview | Photoshop, Preview |
+| **P** | Photo/Preview | Photoshop, Lightroom Classic, Hasselblad Phocus, Preview |
 | **V** | Video | Final Cut, Premiere Pro |
 | **U** | mUsic | Music, Spotify |
 | **D** | Documentation | Documentation apps |
@@ -296,8 +296,11 @@ Cmd+Alt+A    → Open Claude (AI Assistant)
 Cmd+Alt+P    → Open Perplexity (AI Search)
 Cmd+Alt+W    → Open WhatsApp
 Cmd+Alt+M    → Open Messages
+Cmd+Alt+D    → Open Discord
 Cmd+Alt+G    → Open ChatGPT (web)
 Cmd+Shift+Alt+T → Open Telegram
+Cmd+Shift+Alt+L → Open Adobe Lightroom Classic
+Cmd+Shift+Alt+S → Open Adobe Photoshop
 ```
 
 **🎯 Focus Navigation** (Vim-style)
