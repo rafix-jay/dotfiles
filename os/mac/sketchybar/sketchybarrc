@@ -6,7 +6,7 @@
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 ##### Events #####
-# Add custom events for aerospace workspace integration
+# Subscribe to AeroSpace workspace change events
 sketchybar --add event aerospace_workspace_change
 
 ##### Bar Appearance #####
@@ -50,21 +50,17 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### Adding Mission Control Space Indicators #####
-# Let's add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces.
-
-# AeroSpace workspace indicators - Most Used Workspaces Only
-SPACE_ICONS=("T" "B" "C" "I" "A" "M" "P" "1" "2" "3")
-SPACE_NAMES=("Terminal" "Browser" "Code" "IntelliJ" "AI-Tools" "Messaging" "Photo" "General-1" "General-2" "General-3")
-for i in "${!SPACE_ICONS[@]}"
+##### Adding AeroSpace Workspace Indicators #####
+# AeroSpace workspace integration
+# Primary workspaces with meaningful names
+AEROSPACE_WORKSPACES=(T B C I A M 1 2 3)
+for i in "${!AEROSPACE_WORKSPACES[@]}"
 do
-  sid="${SPACE_ICONS[i]}"
+  workspace="${AEROSPACE_WORKSPACES[i]}"
   space=(
-    icon="${SPACE_ICONS[i]}"
+    icon="$workspace"
     icon.padding_left=7
-    icon.padding_right=7
+    icon.padding_right=7  
     icon.color=$ICON_COLOR
     background.color=$BACKGROUND_1
     background.corner_radius=5
@@ -72,10 +68,10 @@ do
     background.drawing=off
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
-    click_script="aerospace workspace $sid"
+    click_script="aerospace workspace $workspace"
   )
-  sketchybar --add item space."$sid" left --set space."$sid" "${space[@]}" \
-             --subscribe space."$sid" aerospace_workspace_change
+  sketchybar --add item space."$workspace" left --set space."$workspace" "${space[@]}" \
+             --subscribe space."$workspace" aerospace_workspace_change
 done
 
 ##### Adding Left Items #####

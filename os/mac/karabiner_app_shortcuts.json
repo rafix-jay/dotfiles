@@ -1,0 +1,206 @@
+{
+  "title": "App Shortcuts (Replaces AeroSpace)",
+  "rules": [
+    {
+      "description": "App Shortcuts - Launch Applications with Cmd+Alt combinations",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Warp'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Brave Browser'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Visual Studio Code'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Finder'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'IntelliJ IDEA'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Claude'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "sh -c \"open -a 'Perplexity' 2>/dev/null || open 'https://www.perplexity.ai'\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'WhatsApp'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Messages'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Discord'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": ["left_command", "left_shift", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Telegram'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": ["left_command", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open 'https://chat.openai.com'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": ["left_command", "left_shift", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Adobe Lightroom Classic'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": ["left_command", "left_shift", "left_option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Adobe Photoshop 2024'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

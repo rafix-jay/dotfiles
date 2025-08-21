@@ -1,10 +1,15 @@
 #!/bin/sh
 
 # AeroSpace workspace integration
-# Get current AeroSpace workspace - use environment variable if available (from aerospace trigger)
-CURRENT_WORKSPACE="${FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused 2>/dev/null || echo "1")}"
+# Get current focused workspace from AeroSpace
+if command -v aerospace >/dev/null 2>&1; then
+    CURRENT_WORKSPACE=$(aerospace list-workspaces --focused)
+else
+    echo "AeroSpace not found"
+    exit 1
+fi
 
-# Extract workspace ID from the space item name (e.g., "space.A" -> "A")
+# Extract workspace ID from the space item name (e.g., "space.T" -> "T")  
 WORKSPACE_ID=${NAME#space.}
 
 # Check if this workspace is currently focused
@@ -21,5 +26,5 @@ fi
 
 # Also trigger a general workspace refresh if this is called manually
 if [ "$1" = "refresh" ]; then
-    /Users/rafix/.config/sketchybar/plugins/update_workspaces.sh
+    echo "AeroSpace workspaces are now active"
 fi

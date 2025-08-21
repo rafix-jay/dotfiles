@@ -15,7 +15,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 ]
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -64,7 +64,7 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   [{ monitor.main = 8 }, 12]     # Larger gaps on external monitors
     outer.left =       [{ monitor.main = 8 }, 16]     # More padding on external monitors
     outer.bottom =     [{ monitor.main = 8 }, 16]     # More padding on external monitors
-    outer.top =        [{ monitor.main = 37 }, 40]    # MacBook: exact bar height, External: more padding
+    outer.top =        [{ monitor.main = 45 }, 45]    # Sketchybar height (37px) + padding (8px)
     outer.right =      [{ monitor.main = 8 }, 16]     # More padding on external monitors
 
 # Workspace assignments for specific apps
@@ -201,9 +201,29 @@ run = 'move-node-to-workspace B'  # B for Browser
 
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
-    # Application shortcuts moved to Karabiner for better performance and consistency
-    # See Karabiner configuration for all app launch shortcuts
-
+    # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
+    # Application shortcuts
+    cmd-alt-t = 'exec-and-forget open -a Warp'                    # Terminal (Warp)
+    cmd-alt-b = 'exec-and-forget open -a "Brave Browser"'         # Browser (Brave)
+    cmd-alt-c = 'exec-and-forget open -a "Visual Studio Code"'    # Code Editor
+    cmd-alt-f = 'exec-and-forget open -a Finder'                  # File Manager
+    cmd-alt-i = 'exec-and-forget open -a "IntelliJ IDEA"'         # IDE
+    cmd-alt-a = 'exec-and-forget open -a Claude'                  # AI Assistant
+    cmd-alt-p = 'exec-and-forget sh -c "open -a Perplexity 2>/dev/null || open \"https://www.perplexity.ai\""'  # AI Search (app or web)
+    
+    # Messaging apps
+    cmd-alt-w = 'exec-and-forget open -a WhatsApp'                # WhatsApp
+    cmd-alt-m = 'exec-and-forget open -a Messages'                # Messages
+    cmd-alt-d = 'exec-and-forget open -a Discord'                 # Discord
+    cmd-shift-alt-t = 'exec-and-forget open -a Telegram'          # Telegram (alternative shortcut)
+    
+    # AI Tools (web-based fallback)
+    cmd-alt-g = 'exec-and-forget open "https://chat.openai.com"'  # ChatGPT (web)
+    
+    # Creative applications
+    cmd-shift-alt-l = 'exec-and-forget open -a "Adobe Lightroom Classic"'  # Lightroom Classic
+    cmd-shift-alt-s = 'exec-and-forget open -a "Adobe Photoshop 2024"'     # Photoshop
+    
     # Sketchybar integration
     alt-shift-0 = 'exec-and-forget /Users/rafix/.config/sketchybar/plugins/update_workspaces.sh'  # Refresh workspace indicators
 
@@ -216,7 +236,7 @@ run = 'move-node-to-workspace B'  # B for Browser
     alt-j = 'focus down'
     alt-k = 'focus up'
     alt-l = 'focus right'
-
+    
     # Focus monitor navigation
     cmd-alt-h = 'focus-monitor left'
     cmd-alt-l = 'focus-monitor right'
@@ -310,17 +330,17 @@ run = 'move-node-to-workspace B'  # B for Browser
     alt-shift-equal = 'balance-sizes'                 # Balance window sizes
     alt-period = 'layout tiles accordion'            # Toggle layout mode
     alt-shift-backslash = 'flatten-workspace-tree'   # Reset layout
-
+    
     # Quick actions
     cmd-ctrl-alt-shift-q = 'reload-config'           # Reload AeroSpace config
     cmd-ctrl-alt-shift-c = 'move-mouse window-lazy-center'  # Center current window
-
+    
     # Emergency reset (panic button)
     cmd-ctrl-alt-shift-x = 'flatten-workspace-tree'  # Emergency layout reset
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
-
+    
     # Enhanced resize mode - more granular control
     cmd-ctrl-alt-shift-r = 'mode resize'
 
@@ -331,17 +351,17 @@ run = 'move-node-to-workspace B'  # B for Browser
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
     backspace = ['close-all-windows-but-current', 'mode main']
-
+    
     # Enhanced window management
     c = ['move-mouse window-lazy-center', 'mode main']  # Center floating window
     b = ['balance-sizes', 'mode main']  # Balance all window sizes
     m = ['fullscreen', 'mode main']  # Maximize/fullscreen current window
-
+    
     # Layout presets
     1 = ['layout tiles', 'mode main']  # Tiles layout
     2 = ['layout accordion', 'mode main']  # Accordion layout
     3 = ['layout floating', 'mode main']  # Floating layout
-
+    
     # Workspace operations
     w = ['close-all-windows-but-current', 'mode main']  # Close all but current
     q = ['flatten-workspace-tree', 'mode main']  # Reset workspace layout
@@ -363,24 +383,24 @@ run = 'move-node-to-workspace B'  # B for Browser
 [mode.resize.binding]
     esc = 'mode main'
     enter = 'mode main'
-
+    
     # Granular resizing with different step sizes
     h = 'resize width -50'
     j = 'resize height +50'
     k = 'resize height -50'
     l = 'resize width +50'
-
+    
     # Fine-grained resizing
     shift-h = 'resize width -10'
     shift-j = 'resize height +10'
     shift-k = 'resize height -10'
     shift-l = 'resize width +10'
-
+    
     # Preset ratios
     1 = ['resize smart +0', 'mode main']  # Reset to balanced
     2 = ['resize smart -200', 'mode main']  # Smaller
     3 = ['resize smart +200', 'mode main']  # Larger
-
+    
     # Quick resize presets
     alt-equal = ['balance-sizes', 'mode main']  # Balance all windows
     alt-minus = ['resize smart -100', 'mode main']
