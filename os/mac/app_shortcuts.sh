@@ -53,9 +53,12 @@ launch_app() {
         "photoshop")
             open -a "Adobe Photoshop 2024"
             ;;
+        "protonmail"|"mail"|"email")
+            open -a "Proton Mail"
+            ;;
         *)
             echo "Unknown app: $app_name"
-            echo "Available apps: terminal, browser, code, finder, intellij, claude, perplexity, whatsapp, messages, discord, telegram, chatgpt, lightroom, photoshop"
+            echo "Available apps: terminal, browser, code, finder, intellij, claude, perplexity, whatsapp, messages, discord, telegram, chatgpt, lightroom, photoshop, protonmail"
             ;;
     esac
 }
