@@ -17,3 +17,27 @@ function recent_dirs() {
 
 	cd "$(echo "$selected" | sed "s/\~/$escaped_home/")" || echo "Invalid directory"
 }
+
+# Tmux functions for better Warp integration
+function tmux_new_session() {
+	local session_name="${1:-$(basename $PWD)}"
+	tmux new-session -d -s "$session_name" -c "$PWD"
+	tmux attach-session -t "$session_name"
+}
+
+function tmux_attach_or_new() {
+	local session_name="${1:-$(basename $PWD)}"
+	if tmux has-session -t "$session_name" 2>/dev/null; then
+		tmux attach-session -t "$session_name"
+	else
+		tmux_new_session "$session_name"
+	fi
+}
+
+function tmux_kill_all() {
+	tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | xargs -n 1 tmux kill-session -t
+}
+
+function tmux_session_list() {
+	tmux list-sessions -F '#{session_name}: #{session_windows} windows (created #{session_created_string})'
+}

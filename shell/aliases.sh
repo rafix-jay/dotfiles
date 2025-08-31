@@ -22,6 +22,17 @@ alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 
+# Tmux
+alias tm="tmux"
+alias tma="tmux attach-session"
+alias tmn="tmux new-session"
+alias tml="tmux list-sessions"
+alias tmk="tmux kill-session"
+alias tmns="tmux_new_session"
+alias tmon="tmux_attach_or_new"
+alias tmka="tmux_kill_all"
+alias tmls="tmux_session_list"
+
 # Utils
 alias k='kill -9'
 alias i.='(idea $PWD &>/dev/null &)'

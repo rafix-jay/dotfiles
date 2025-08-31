@@ -10,6 +10,9 @@ setopt +o nomatch
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+# Set degit as default tool for Zim modules
+zstyle ':zim:zmodule' use 'degit'
+
 # Start Zim
 source "$ZIM_HOME/init.zsh"
 
@@ -27,3 +30,4 @@ prompt ${DOTLY_THEME:-codely}
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
+export PATH="$HOME/.local/bin:$PATH"

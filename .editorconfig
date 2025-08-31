@@ -1,0 +1,31 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.{yml,yaml,json}]
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+# indent_size intentionally omitted; tabs are required in Makefiles
+
+[*.md]
+# Preserve intentional trailing spaces used for line breaks in Markdown
+trim_trailing_whitespace = false
+
