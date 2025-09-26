@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # App Shortcuts Script
-# Alternative to AeroSpace app launching functionality
+# Quick app launching functionality using keyboard shortcuts
 # This script provides functions to launch applications
 
 launch_app() {

@@ -1,5 +1,5 @@
 {
-  "title": "App Shortcuts (Replaces AeroSpace)",
+  "title": "App Shortcuts - Quick App Launching",
   "rules": [
     {
       "description": "App Shortcuts - Launch Applications with Cmd+Alt combinations",

@@ -14,7 +14,7 @@
 
 ## ✨ Features
 
-🏗️ **Complete Setup**: Zsh + Zimfw + tmux + Aerospace + SketchyBar  
+🏗️ **Complete Setup**: Zsh + Zimfw + tmux  
 ⚡ **Performance**: Fast shell startup with optimized configurations  
 🔧 **Reproducible**: Idempotent installation avoiding generated artifacts  
 🎨 **Modern**: Latest development tools and productivity utilities  
@@ -57,12 +57,12 @@ git submodule update --init --recursive modules/dotly
 - **Clipboard Integration**: Seamless macOS copy/paste support
 
 ### 🪟 **Window Management**
-- **AeroSpace**: Semantic workspaces (T=Terminal, B=Browser, C=Code)
+- **App Shortcuts**: Quick application launching with keyboard shortcuts
 - **Smart Layouts**: Auto-tiling with responsive gaps and orientations
 - **Keyboard Navigation**: Vim-style focus controls and instant app switching
 
 ### 📊 **Status Bar**
-- **SketchyBar**: Real-time system monitoring and workspace indicators
+- **Simplified Setup**: Clean terminal-focused environment
 - **Media Integration**: Now playing from Apple Music with auto-scroll
 - **System Metrics**: CPU, memory, network, battery, and weather
 
@@ -88,8 +88,8 @@ source ~/.zshrc           # Reload shell configuration
 dot symlinks apply        # Apply configuration symlinks
 
 # System management
-sketchybar --reload       # Reload status bar
-aerospace --reload-config # Reload window manager
+# System monitoring removed for cleaner setup
+# Window management now handled by app shortcuts
 ```
 
 ## 🔧 Maintenance & Customization
@@ -105,8 +105,8 @@ brew bundle dump --file=os/mac/brew/Brewfile --force
 
 - Shell: `shell/aliases.sh`, `shell/functions.sh`
 - tmux: `shell/tmux/tmux.conf`
-- AeroSpace: `os/mac/aerospace.toml`  
-- SketchyBar: `os/mac/sketchybar/`
+- App Shortcuts: `os/mac/app_shortcuts.sh`  
+- Terminal Tools: Focus on shell and development tools
 
 ## 📖 Documentation
 
@@ -117,7 +117,7 @@ For comprehensive setup guides, troubleshooting, and advanced configuration:
 Includes detailed documentation for:
 
 - 🏗️ **Project Structure**: Directory organization and file purposes
-- ⌨️ **Keyboard Shortcuts**: Complete AeroSpace and tmux key bindings
+- ⌨️ **Keyboard Shortcuts**: App shortcuts and tmux key bindings
 - 🎨 **Customization**: Adding widgets, modifying themes, extending functionality
 - 🛠️ **Troubleshooting**: Common issues and diagnostic commands
 - 🔄 **Maintenance**: Update procedures and best practices

@@ -22,8 +22,8 @@ This dotfiles repository provides a complete development environment setup for m
 - **Shell Environment**: Zsh with Zimfw framework
 - **Package Management**: Homebrew with automated installation
 - **Terminal Multiplexer**: tmux with Warp integration
-- **Window Management**: Aerospace tiling window manager
-- **Status Bar**: SketchyBar for system monitoring
+- **App Management**: Keyboard shortcuts for quick app launching
+- **Terminal Focus**: Streamlined development environment
 - **Development Tools**: Complete VS Code setup, Git configuration, and CLI tools
 
 ### Key Features
@@ -58,8 +58,8 @@ This dotfiles repository provides a complete development environment setup for m
 ├── os/mac/
 │   ├── brew/
 │   │   └── Brewfile        # Homebrew packages
-│   ├── aerospace.toml      # Window manager config
-│   ├── sketchybar/         # Status bar configuration
+│   ├── app_shortcuts.sh   # App launching shortcuts
+│   ├── (removed)           # Status bar removed for simplicity
 │   └── .dotly              # Dotly macOS settings
 ├── symlinks/
 │   ├── conf.yaml           # Cross-platform symlinks
@@ -133,7 +133,7 @@ The `os/mac/brew/Brewfile` contains all managed packages:
 #### Applications (Casks)
 - **Development**: OrbStack, 1Password CLI
 - **Fonts**: Nerd Fonts, SF Pro
-- **Productivity**: Aerospace, SketchyBar
+- **Productivity**: App shortcuts, terminal tools
 - **Terminal**: WezTerm
 
 #### VS Code Extensions
@@ -178,8 +178,8 @@ dot symlinks apply
 | Source | Target | Purpose |
 |--------|--------|---------|
 | `shell/tmux/tmux.conf` | `~/.tmux.conf` | tmux configuration |
-| `os/mac/aerospace.toml` | `~/.aerospace.toml` | Window manager |
-| `os/mac/sketchybar/` | `~/.config/sketchybar/` | Status bar |
+| `os/mac/app_shortcuts.sh` | App shortcuts | Quick app launching |
+| Terminal focus | Clean shell environment | Development |
 | `shell/zsh/.zshrc` | `~/.zshrc` | Zsh configuration |
 
 ## 🐚 Shell Configuration
@@ -259,9 +259,9 @@ Optimized for **Warp terminal** integration:
 - ✅ Custom status bar
 - ✅ Vi-mode copy selection
 
-### Aerospace Window Manager
+### App Shortcuts
 
-**AeroSpace** is a tiling window manager for macOS that automatically arranges windows in non-overlapping tiles. Configuration in `os/mac/aerospace.toml`.
+**App Shortcuts** provide quick keyboard-based application launching using Karabiner Elements. Configuration in `os/mac/app_shortcuts.sh`.
 
 #### Workspace Organization
 
@@ -390,10 +390,10 @@ Esc/Enter    → Exit resize mode
 
 **🔧 System Controls**
 ```
-Cmd+Ctrl+Alt+Shift+Q → Reload AeroSpace config
+# App shortcuts are configured via Karabiner Elements
 Cmd+Ctrl+Alt+Shift+C → Center mouse in current window
 Cmd+Ctrl+Alt+Shift+X → Emergency layout reset
-Alt+Shift+0          → Refresh SketchyBar workspace indicators
+# Status bar removed for cleaner setup
 ```
 
 #### Layout Features
@@ -402,116 +402,25 @@ Alt+Shift+0          → Refresh SketchyBar workspace indicators
 - **Smart orientation**: Horizontal for wide monitors, vertical for tall
 - **Accordion padding**: 30px padding for accordion layout
 - **Mouse follows focus**: Automatic mouse positioning
-- **SketchyBar integration**: 45px top padding for status bar
+- **Clean Interface**: No status bar for distraction-free work
 
-### SketchyBar
+### System Monitoring Removed
 
-**SketchyBar** is a highly customizable status bar replacement for macOS. Configuration in `os/mac/sketchybar/`.
+**Status bar functionality has been removed** for a cleaner, distraction-free development environment focused on terminal productivity.
 
-#### Layout Overview
+#### Focus on Terminal
 
-```
-[Workspaces] [Chevron] [Current App]     [Media Player]     [System Info] [Clock]
-    Left Side                               Center                Right Side
-```
+This configuration now prioritizes a clean, distraction-free terminal environment:
 
-#### Workspace Indicators (Left)
-
-**Interactive Workspace Buttons**:
-- **Visual States**: 
-  - Active: Highlighted with accent color (cyan)
-  - Inactive: Transparent background, white icon
-- **Click Actions**: Click any workspace to switch instantly
-- **Real-time Updates**: Automatically updates when workspace changes
-- **Displayed Workspaces**: T, B, C, I, A, M, 1, 2, 3 (most commonly used)
-
-#### Current Application Display (Left)
-
-- **App Name**: Shows currently focused application
-- **Dynamic Updates**: Changes in real-time as you switch applications
-- **Chevron Separator**: Visual separator with arrow icon
-
-#### Media Center (Center)
-
-- **Now Playing**: Displays currently playing media from Apple Music
-- **Scrolling Text**: Long titles scroll automatically
-- **Auto-hide**: Hidden when no media is playing
-- **Update Frequency**: Refreshes every 5 seconds
-
-#### System Monitoring (Right)
-
-**Real-time System Information**:
-
-| Widget | Icon | Info | Update Freq |
-|--------|------|------|-------------|
-| **Clock** | 󰥔 | Date and time | 10 seconds |
-| **Weather** | | Current conditions | 5 minutes |
-| **Volume** | 🔊 | Audio level | Event-based |
-| **Battery** | 🔋 | Charge % and status | 2 minutes |
-| **CPU** | 󰘚 | Usage percentage | 2 seconds |
-| **Memory** | 📊 | RAM usage | 5 seconds |
-| **Network** | 🌐 | Connection status | 10 seconds |
-| **Disk** | 💽 | Storage usage | 1 minute |
-
-#### Color Scheme
-
-```
-Background:   Semi-transparent with blur
-Icons:        White (#ffffff)
-Labels:       White (#ffffff)
-Active WS:    Cyan accent (#8bd5ca)
-Highlights:   Green accent (#a6da95)
-```
-
-#### Plugin System
-
-All widgets are powered by shell scripts in `plugins/` directory:
-
-- **`space.sh`**: AeroSpace workspace integration
-- **`update_workspaces.sh`**: Manual workspace refresh
-- **`front_app.sh`**: Current application detection
-- **`media.sh`**: Apple Music integration
-- **`clock.sh`**: Date/time display
-- **`weather.sh`**: Weather information
-- **`volume.sh`**: Audio level monitoring
-- **`battery.sh`**: Power status
-- **`cpu.sh`**: CPU usage calculation
-- **`memory.sh`**: RAM usage monitoring
-- **`network.sh`**: Network status
-- **`disk.sh`**: Storage monitoring
-
-#### SketchyBar Controls
-
-```bash
-# Refresh workspace indicators
-sketchybar --trigger aerospace_workspace_change
-
-# Update all widgets
-sketchybar --update
-
-# Reload configuration
-sketchybar --reload
-
-# Check status
-sketchybar --query bar
-```
-
-#### Customization
-
-**Adding New Widgets**:
-1. Create plugin script in `plugins/` directory
-2. Add widget configuration to `sketchybarrc`
-3. Set update frequency or event subscription
-4. Reload SketchyBar
-
-**Modifying Appearance**:
-- Edit color variables in `sketchybarrc`
-- Adjust fonts, sizes, and spacing
+- **No Status Bar**: Removed visual clutter and system monitoring
+- **Terminal-Centric**: Focus on shell productivity and development tools
+- **App Shortcuts**: Quick application launching via keyboard shortcuts
+- **Simplified Setup**: Easier maintenance and fewer dependencies
 - Modify background blur and transparency
 
 #### Integration Features
 
-- **AeroSpace Sync**: Workspace indicators update automatically
+- **Simplified**: Removed workspace indicators for cleaner bar
 - **Event System**: Responds to system changes instantly
 - **Plugin Architecture**: Modular and extensible design
 - **Performance**: Efficient updates with minimal CPU usage
@@ -680,8 +589,8 @@ If you need to start fresh:
 - [Dotly Documentation](https://github.com/CodelyTV/dotly)
 - [Zimfw Documentation](https://github.com/zimfw/zimfw)
 - [tmux Manual](https://man.openbsd.org/tmux.1)
-- [Aerospace Guide](https://github.com/nikitabobko/AeroSpace)
-- [SketchyBar Documentation](https://github.com/FelixKratz/SketchyBar)
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/) for app shortcuts
+- [Terminal Productivity Guide](https://github.com/rothgar/mastering-zsh)
 
 ---
 

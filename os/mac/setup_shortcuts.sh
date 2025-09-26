@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Setup Script for App Shortcuts
-# Replaces AeroSpace app launching functionality
+# Quick app launching using Karabiner Elements keyboard shortcuts
 
 set -e
 
-echo "🔧 Setting up app shortcuts to replace AeroSpace..."
+echo "🔧 Setting up app shortcuts using Karabiner Elements..."
 
 DOTFILES_DIR="$HOME/.dotfiles"
 SCRIPT_DIR="$DOTFILES_DIR/os/mac"
